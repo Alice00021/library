@@ -7,6 +7,7 @@ class MainWindow(QMainWindow):
         super().__init__()
 
         self.setWindowTitle("Библиотека")
+        self.resize(675, 500)
 
         # Создаем объект для соединения с базой данных
         self.conn = psycopg2.connect(
@@ -29,6 +30,11 @@ class MainWindow(QMainWindow):
         table = QTableWidget()
         table.setColumnCount(5)
         table.setHorizontalHeaderLabels(["ID", "Название книги", "Автор", "Жанр", "Наличие"])
+        table.setColumnWidth(0, 50)  # Установка ширины первого столбца (ID) в 50 пикселей
+        table.setColumnWidth(1, 200) 
+        table.setColumnWidth(2, 200)
+        table.setColumnWidth(3, 100)
+        table.setColumnWidth(4, 100)
         layout.addWidget(table)
         tab.setLayout(layout)
 
