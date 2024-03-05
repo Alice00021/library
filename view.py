@@ -22,6 +22,11 @@ class LibraryView(QMainWindow):
         self.books_table = QTableWidget()
         self.books_table.setColumnCount(5)
         self.books_table.setHorizontalHeaderLabels(["ID", "Название книги", "Автор", "Жанр", "Наличие"])
+        self.books_table.setColumnWidth(0, 50)  # Установка ширины первого столбца (ID) в 50 пикселей
+        self.books_table.setColumnWidth(1, 200) 
+        self.books_table.setColumnWidth(2, 200)
+        self.books_table.setColumnWidth(3, 100)
+        self.books_table.setColumnWidth(4, 100)
         layout.addWidget(self.books_table)
         tab.setLayout(layout)
         self.central_widget.addTab(tab, "Книги")
